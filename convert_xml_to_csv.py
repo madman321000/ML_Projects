@@ -25,7 +25,7 @@ for picture in pictures:
             xmax = int(re.search('<xmax>\d+', cell).group(0)[6:])
             ymin = int(re.search('<ymin>\d+', cell).group(0)[6:])
             ymax = int(re.search('<ymax>\d+', cell).group(0)[6:])
-            conv['filename'].append(f'annotations/{filename}')
+            conv['filename'].append(f'JPEGImages/{filename}')
             conv['xmin'].append(xmin)
             conv['xmax'].append(xmax)
             conv['ymin'].append(ymin)
