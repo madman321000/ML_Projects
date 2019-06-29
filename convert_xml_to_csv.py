@@ -9,7 +9,7 @@ for picture in pictures:
     filename = ''
     tree = ET.parse(picture)
     root = tree.getroot()
-    conv = {'filename': [], 'xmin': [], 'xmax': [], 'ymin': [], 'ymax': []}
+    conv = {'filename': [], 'type': [], 'xmin': [], 'xmax': [], 'ymin': [], 'ymax': []}
     for child in root:
         name = ''
         xmin = ''
@@ -26,6 +26,7 @@ for picture in pictures:
             ymin = int(re.search('<ymin>\d+', cell).group(0)[6:])
             ymax = int(re.search('<ymax>\d+', cell).group(0)[6:])
             conv['filename'].append(f'JPEGImages/{filename}')
+            conv['type'].append(name)
             conv['xmin'].append(xmin)
             conv['xmax'].append(xmax)
             conv['ymin'].append(ymin)
